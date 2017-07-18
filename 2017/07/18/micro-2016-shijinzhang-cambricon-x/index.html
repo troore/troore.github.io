@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="Title: FP-DNN: An Automated Framework for Mapping Deep Neural Networks onto FPGAs with RTL-HLS Hybrid Templates Conference: FCCM 2017 doi: http://ieeexplore.ieee.org/document/7966671/ SummaryFPGA-base">
+<meta name="description" content="Detailed CommentsBackground and MotivationAn intuitive optimization is to directly integrate sparsity encoding/decoding modules into existing DianNao or DaDianNao architecture, so as to reduce off-chi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FCCM&#39;17 FP-DNN Review">
-<meta property="og:url" content="http://yoursite.com/2017/07/15/fccm-2017-yijinguan-fpdnn/index.html">
+<meta property="og:title" content="MICRO&#39;16 Cambricon-X Review">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/micro-2016-shijinzhang-cambricon-x/index.html">
 <meta property="og:site_name" content="troore&#39;s">
-<meta property="og:description" content="Title: FP-DNN: An Automated Framework for Mapping Deep Neural Networks onto FPGAs with RTL-HLS Hybrid Templates Conference: FCCM 2017 doi: http://ieeexplore.ieee.org/document/7966671/ SummaryFPGA-base">
-<meta property="og:updated_time" content="2017-07-17T07:31:55.892Z">
+<meta property="og:description" content="Detailed CommentsBackground and MotivationAn intuitive optimization is to directly integrate sparsity encoding/decoding modules into existing DianNao or DaDianNao architecture, so as to reduce off-chi">
+<meta property="og:updated_time" content="2017-07-18T12:51:25.516Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FCCM&#39;17 FP-DNN Review">
-<meta name="twitter:description" content="Title: FP-DNN: An Automated Framework for Mapping Deep Neural Networks onto FPGAs with RTL-HLS Hybrid Templates Conference: FCCM 2017 doi: http://ieeexplore.ieee.org/document/7966671/ SummaryFPGA-base">
+<meta name="twitter:title" content="MICRO&#39;16 Cambricon-X Review">
+<meta name="twitter:description" content="Detailed CommentsBackground and MotivationAn intuitive optimization is to directly integrate sparsity encoding/decoding modules into existing DianNao or DaDianNao architecture, so as to reduce off-chi">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/15/fccm-2017-yijinguan-fpdnn/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/18/micro-2016-shijinzhang-cambricon-x/"/>
 
 
 
 
 
-  <title>FCCM'17 FP-DNN Review | troore's</title>
+  <title>MICRO'16 Cambricon-X Review | troore's</title>
   
 
 
@@ -255,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/15/fccm-2017-yijinguan-fpdnn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/micro-2016-shijinzhang-cambricon-x/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="troore">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">FCCM'17 FP-DNN Review</h1>
+          <h1 class="post-title" itemprop="name headline">MICRO'16 Cambricon-X Review</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-15T16:33:45+08:00">
-                2017-07-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-18T16:05:26+08:00">
+                2017-07-18
               </time>
             
 
@@ -319,27 +319,17 @@
       
 
       
-        <p><strong>Title</strong>: FP-DNN: An Automated Framework for Mapping Deep Neural Networks onto FPGAs with RTL-HLS Hybrid Templates</p>
-<p><strong>Conference</strong>: FCCM 2017</p>
-<p><strong>doi</strong>: <a href="http://ieeexplore.ieee.org/document/7966671/" target="_blank" rel="external">http://ieeexplore.ieee.org/document/7966671/</a></p>
-<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>FPGA-based accelerator is a promising solution for computation and communication intensive DNNs, considering its performance, flexibility and energy efficiency. Unfortunately, conventional accelerator design flows make it difficult for FPGA developers to keep up with the fast pace of innovations in DNNs. This paper proposes an automation framework to deploy DNNs described with software framework (TensorFlow) on FPGA. This framework is general enough to support various DNN models like CNN, LSTM, etc. It uses an optimized matrix multiplication unit to perform core computation for all models. It also applies communication optimization to improve off-chip memory access efficiency.</p>
-<h1 id="Strength"><a href="#Strength" class="headerlink" title="Strength"></a>Strength</h1><p>TensorFlow is a persuasive software library for mapping numerical computation depicted by flow graph onto hardware platforms, especially for machine learning applications. This work provides TensorFlow with FPGA support at the first time.</p>
-<p>Given an application expressed by dataflow graph, and FPGA platform with hardware resource constraints, the authors formulate the minimization of number of off-chip buffers allocated for intermediate results generated by a graph node as a graph coloring problem.</p>
-<p>This work implements a matrix multiplication (<em>MM</em>) unit as a kernel computation unit for a variety of layers in different models, such as convolutional layers, LSTM layers, etc. Its performance outperforms Intel’s <em>MM</em> hardware library and MKL software library.</p>
-<p>For communication optimization, the authors propose a method called <em>Column-major</em> to avoid duplicate DDR memory footprint as well as increase memory burst length to improve off-chip access bandwidth.</p>
-<h1 id="Weakness"><a href="#Weakness" class="headerlink" title="Weakness"></a>Weakness</h1><p>The computation unit is implemented directly by RTL. It is not flexible and scalable for different requirement of DNN models, as well FPGA platform switching.</p>
-<p>Although avoiding duplicate DDR memory footprint, the <em>Column-major</em> method still needs redundant BRAM resources.</p>
-<h1 id="Detailed-Comments"><a href="#Detailed-Comments" class="headerlink" title="Detailed Comments"></a>Detailed Comments</h1><p><strong>Hardware Implementation</strong></p>
-<p>There is hardware resource usage of <em>Data Arranger</em>, but there is no running time for it.</p>
-<p><em>MM</em> unit is implemented as fixed computation unit by RTL. Considering the fact that this work aims to map dataflow graphs like Figure 2(b) onto FPGA, if there are multiple implementations for different nodes, we have to manually implement them one by one. Thus it is not flexible and scalable for multi-FPGA extension.</p>
-<p>Another problem is, the authors state that the fixed <em>MM</em> could accelerate FC layers by batching. However, is batching is suggested for LSTM, given latency requirement?</p>
-<p>As for the communiation optimization, the <em>Row-major</em> method is useless to be illutrated in this paper. I don’t think it is necessary to put it on purpose to illustrate the benefit of <em>Column-major</em> way.</p>
-<p><strong>Automation</strong></p>
-<p>Why is the <em>Symbolic Compiler</em> is written in C++ and OpenCL? We do not see any details on how to translate TensorFlow programming model to instantiate the hardware templates either.</p>
-<p><strong>Experiment</strong></p>
-<p>Only CNN performance is provided and compared with previous works. How to demonstrate its generalarity for other models, in terms of high performance?</p>
-<p>What is authors’ contribution to <em>MM</em> performance optimization?</p>
-<p>The most important motivation of the RTL implementation for <em>MM</em> unit is that current designs cannot explore as much fine-grained optimization as in RTL designs. However, there is no illutration on what “fine-grained” optimization cannot be explored by current HLS tools. And there is no performance comparison with state-of-the-art HLS implementation of <em>MM</em>. As far as I know, the systolic array implementation of <em>MM</em> in [Jie, et al., FPGA’15] could achieve more than 300 GFlops, which is comparative with the results in Table I in this paper.</p>
+        <h1 id="Detailed-Comments"><a href="#Detailed-Comments" class="headerlink" title="Detailed Comments"></a>Detailed Comments</h1><h2 id="Background-and-Motivation"><a href="#Background-and-Motivation" class="headerlink" title="Background and Motivation"></a>Background and Motivation</h2><p>An intuitive optimization is to directly integrate sparsity encoding/decoding modules into existing DianNao or DaDianNao architecture, so as to reduce off-chip memory accesses as well. However, this solution may not be efficient for two main reasons: </p>
+<ol>
+<li><p>the number of total operations remain the same, because the pruned synapses are still filled with zero values, incurring significant waste of computational resource,</p>
+</li>
+<li><p>neither the centralized architecture (e.g., DianNao) nor the symmetric tiled architecture (e.g., DaDianNao) can adapt to irregularity of sparse NNs.</p>
+</li>
+</ol>
+<h2 id="Accelerator-Design"><a href="#Accelerator-Design" class="headerlink" title="Accelerator Design"></a>Accelerator Design</h2><p>All the PEs are connected in a topology of Fat-tree in order to avoid wiring congestion.</p>
+<p>As the number of synapses of different neurons may significantly differ from each other, we allow SBs in different PEs to load new data from the memory asynchronously to improve overall efficiency.</p>
+<p><strong>IM.</strong> Instead of distributing an indexing module to each PE, we design a centralized indexing module in the BC and only transfer the indexed neurons to PEs, which can significantly reduce the bandwidth requirement between the neural buffer and PEs because the number of data after indexing is much smaller in sparse networks.</p>
+<p>Aside: Fortunately, systolic array doesn’t have this problem. We could deploy an IM in each PE, as the inter-PE connection could greatly reduce the bandwidth between PE and neuron buffers.</p>
 
       
     </div>
@@ -376,15 +366,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/15/fccm-2017-yijinguan-fpdnn/" rel="next" title="FCCM'17 FP-DNN Review">
+                <i class="fa fa-chevron-left"></i> FCCM'17 FP-DNN Review
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/18/micro-2016-shijinzhang-cambricon-x/" rel="prev" title="MICRO'16 Cambricon-X Review">
-                MICRO'16 Cambricon-X Review <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,7 +486,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Strength"><span class="nav-number">2.</span> <span class="nav-text">Strength</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Weakness"><span class="nav-number">3.</span> <span class="nav-text">Weakness</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Comments"><span class="nav-number">4.</span> <span class="nav-text">Detailed Comments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Comments"><span class="nav-number">1.</span> <span class="nav-text">Detailed Comments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background-and-Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Background and Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accelerator-Design"><span class="nav-number">1.2.</span> <span class="nav-text">Accelerator Design</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -667,26 +657,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
