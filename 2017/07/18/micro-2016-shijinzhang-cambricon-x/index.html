@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/18/micro-2016-shijinzhang-cambricon-x/index.html">
 <meta property="og:site_name" content="troore&#39;s">
 <meta property="og:description" content="Detailed CommentsBackground and MotivationAn intuitive optimization is to directly integrate sparsity encoding/decoding modules into existing DianNao or DaDianNao architecture, so as to reduce off-chi">
-<meta property="og:updated_time" content="2017-07-18T12:51:25.516Z">
+<meta property="og:updated_time" content="2017-07-18T12:56:48.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MICRO&#39;16 Cambricon-X Review">
 <meta name="twitter:description" content="Detailed CommentsBackground and MotivationAn intuitive optimization is to directly integrate sparsity encoding/decoding modules into existing DianNao or DaDianNao architecture, so as to reduce off-chi">
@@ -328,8 +328,8 @@
 </ol>
 <h2 id="Accelerator-Design"><a href="#Accelerator-Design" class="headerlink" title="Accelerator Design"></a>Accelerator Design</h2><p>All the PEs are connected in a topology of Fat-tree in order to avoid wiring congestion.</p>
 <p>As the number of synapses of different neurons may significantly differ from each other, we allow SBs in different PEs to load new data from the memory asynchronously to improve overall efficiency.</p>
-<p><strong>IM.</strong> Instead of distributing an indexing module to each PE, we design a centralized indexing module in the BC and only transfer the indexed neurons to PEs, which can significantly reduce the bandwidth requirement between the neural buffer and PEs because the number of data after indexing is much smaller in sparse networks.</p>
-<p>Aside: Fortunately, systolic array doesn’t have this problem. We could deploy an IM in each PE, as the inter-PE connection could greatly reduce the bandwidth between PE and neuron buffers.</p>
+<p><strong>IM:</strong> Instead of distributing an indexing module to each PE, we design a centralized indexing module in the BC and only transfer the indexed neurons to PEs, which can significantly reduce the bandwidth requirement between the neural buffer and PEs because the number of data after indexing is much smaller in sparse networks.</p>
+<p><strong>Aside:</strong> Fortunately, systolic array doesn’t have this problem. We could deploy an IM in each PE, as the inter-PE connection could greatly reduce the bandwidth between PE and neuron buffers.</p>
 
       
     </div>
@@ -375,6 +375,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/07/arxiv-20170731-baskin-streaming-qnn/" rel="prev" title="Streaming Architecture for Large-Scale Quantized Neural Networks on an FPGA-Based Dataflow Platform">
+                Streaming Architecture for Large-Scale Quantized Neural Networks on an FPGA-Based Dataflow Platform <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -447,7 +451,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
